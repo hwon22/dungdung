@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">dungdung</string>
+    <string name="idSignup">아이디</string>
+    <string name="passSignup">비밀번호</string>
+    <string name="passChSignUp">비밀번호 확인</string>
+    <string name="emailSignup">이메일</string>
+    <string name="partSignup">좋아하는 책 분야 (3가지)</string>
+    <string name="buttonSignup">회원가입</string>
+    <string name="resultSignup">입력한 정보</string>
 </resources>

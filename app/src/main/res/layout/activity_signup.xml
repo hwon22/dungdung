@@ -50,7 +50,7 @@
         app:layout_constraintTop_toBottomOf="@+id/id" />
 
     <TextView
-        android:id="@+id/passLabel2"
+        android:id="@+id/passChLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -60,7 +60,7 @@
         app:layout_constraintTop_toBottomOf="@+id/passLabel" />
 
     <EditText
-        android:id="@+id/pass2"
+        android:id="@+id/passCh"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -70,50 +70,39 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pass" />
 
-    <EditText
-        android:id="@+id/pass3"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="24dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass2" />
-
     <TextView
-        android:id="@+id/passLabel3"
+        android:id="@+id/emailLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="48dp"
         android:text="@string/emailSignup"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passLabel2" />
+        app:layout_constraintTop_toBottomOf="@+id/passChLabel" />
 
     <EditText
-        android:id="@+id/pass4"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toStartOf="@+id/pass6"
-        app:layout_constraintStart_toEndOf="@+id/pass5"
-        app:layout_constraintTop_toBottomOf="@+id/passLabel4" />
-
-    <TextView
-        android:id="@+id/passLabel4"
+        android:id="@+id/email"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="24dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/passCh" />
+
+    <TextView
+        android:id="@+id/partLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:layout_marginTop="40dp"
         android:text="@string/partSignup"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passLabel3" />
+        app:layout_constraintTop_toBottomOf="@+id/emailLabel" />
 
     <EditText
-        android:id="@+id/pass5"
+        android:id="@+id/partOne"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
@@ -121,10 +110,21 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passLabel4" />
+        app:layout_constraintTop_toBottomOf="@+id/partLabel" />
 
     <EditText
-        android:id="@+id/pass6"
+        android:id="@+id/partTwo"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toStartOf="@+id/partThree"
+        app:layout_constraintStart_toEndOf="@+id/partOne"
+        app:layout_constraintTop_toBottomOf="@+id/partLabel" />
+
+    <EditText
+        android:id="@+id/partThree"
         android:layout_width="100dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
@@ -132,35 +132,35 @@
         android:ems="10"
         android:inputType="textPersonName"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/passLabel4" />
+        app:layout_constraintTop_toBottomOf="@+id/partLabel" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonSignup"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="48dp"
         android:layout_marginEnd="24dp"
         android:text="@string/buttonSignup"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pass5" />
+        app:layout_constraintTop_toBottomOf="@+id/partOne" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/resultLabel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="24dp"
         android:layout_marginTop="20dp"
         android:text="@string/resultSignup"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
+        app:layout_constraintTop_toBottomOf="@+id/buttonSignup" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/result"
         android:layout_width="320dp"
         android:layout_height="30dp"
         android:layout_marginTop="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintTop_toBottomOf="@+id/resultLabel" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
