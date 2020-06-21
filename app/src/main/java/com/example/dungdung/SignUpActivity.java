@@ -75,20 +75,8 @@ public class SignUpActivity extends Activity{
                 if(inputId.length()>0 && inputPw.length()>0 && inputPwc.length()>0 && inputemail.length()>0 &&
                 inputpartOne.length()>0 && inputpartTwo.length()>0 && inputpartThree.length()>0) {
                         if(inputPw.equals(inputPwc)) {
-                                String dbData[] = selectProcess(inputId);
-                                if (!inputId.equals(dbData[0])) { //중복된 아이디 걸러내고 회원가입 진행
-                                    String q = "INSERT INTO "+USER_TABLE_NAME+"(ID,PASS,EMAIL,PARTONE,PARTTWO,PARTTHREE) VALUES ("+"'"+inputId+"',"+"'"+inputPw+"',"+
-                                            "'"+inputemail+"',"+"'"+inputpartOne+"',"+"'"+inputpartTwo+"',"+"'"+inputpartThree+"');";
-                                    db.execSQL(q);
-                                    SharedPreferences prefs = getSharedPreferences(PREFS_NAME, MODE_PRIVATE);
-                                    SharedPreferences.Editor editor = prefs.edit();
-                                    editor.putString("id", inputId);
-                                    editor.putString("pass", inputPw);
-                                    editor.putString("email", inputemail);
-                                    editor.putString("partOne", inputpartOne);
-                                    editor.putString("partTwo", inputPw);
-                                    editor.putString("partThree", inputPw);
-                                    editor.commit();
+                                if (idname.length()>0){ //중복된 아이디 걸러내고 회원가입 진행
+                                    //회원가입
 
                                     showToast(SignUpActivity.this, "회원가입에 성공했습니다.");
                                     result.setText("아이디:" + inputId + "\n" + "비밀번호:" + inputPw+ "\n"+ "이메일:" + inputemail+ "\n"+ "part1:" + inputpartOne+ "\n"+ "part2:" + inputpartTwo+ "\n"+ "part3:" + inputpartThree);

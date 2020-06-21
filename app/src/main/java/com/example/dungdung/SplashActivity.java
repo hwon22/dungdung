@@ -25,7 +25,7 @@ public class SplashActivity extends AppCompatActivity {
         }, 3500); // 3.5초 지연을 준 후 시작
     }
     private void go() {
-        Intent intent = new Intent(this, SignUpActivity.class);
+        Intent intent = new Intent(this, SignInActivity.class);
         startActivity(intent);
         finish();
     }

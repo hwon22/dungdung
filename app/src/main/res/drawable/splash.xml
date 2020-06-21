@@ -3,6 +3,6 @@
     <!--splash 로고나 기타 원하는 이미지-->
     <item>
         <bitmap android:src="@drawable/a"
-            android:gravity="center" />
+          />
     </item>
 </layer-list>
