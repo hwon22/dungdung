@@ -60,17 +60,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ListView
-
-        android:id="@+id/listview"
-
-        android:layout_width="match_parent"
-
-        android:layout_height="500dp"
-
-        android:background="#DCDCDC"
-        app:layout_constraintBottom_toBottomOf="parent"
-        tools:layout_editor_absoluteX="0dp" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
