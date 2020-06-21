@@ -40,6 +40,11 @@ public class Q1Activity extends Activity {
             final TextView q=(TextView)findViewById(R.id.q);
             quiz.add("대체로 좋아하는 작가, 분야가 정해져 있다.");
             quiz.add("책을 읽고 느낀점을 쓰는 것을 좋아한다.");
+            quiz.add("타인이 남긴 책의 리뷰를 꼼꼼히 살펴보지 않고 책을 구매한다.");
+            quiz.add("책을 읽은 후 다른 사람들과의 독서토론을 한다면 참여하지 않을 것 이다..");
+            quiz.add("인상깊은 부분에 밑줄을 긋는다.");
+            quiz.add("책을 읽는 도중에 짧게 메모지에 책의 핵심 내용을 정리한다.");
+            quiz.add("같은 책을 여러번 읽기도 한다.");
 
             if(cnt<3) {
                 q.setText(quiz.get(cnt));

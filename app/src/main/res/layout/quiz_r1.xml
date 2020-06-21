@@ -25,7 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="192dp"
         android:layout_marginBottom="415dp"
-        android:text="내용은 책을 봐야해요..주문해둠..."
+        android:text="이미지 삽입"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
