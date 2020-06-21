@@ -5,6 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="365dp"
     android:layout_height="755dp"
+    android:background="#C4dffc"
     >
 
     <TextView
@@ -29,7 +30,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/no"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/q" />
+        app:layout_constraintTop_toBottomOf="@+id/q"
+        android:background="#C4dffc"/>
 
     <Button
         android:id="@+id/no"
@@ -42,5 +44,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/yes"
-        app:layout_constraintTop_toBottomOf="@+id/q" />
+        app:layout_constraintTop_toBottomOf="@+id/q"
+        android:background="#C4dffc"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
