@@ -75,14 +75,14 @@ public class SignUpActivity extends Activity{
                 if(inputId.length()>0 && inputPw.length()>0 && inputPwc.length()>0 && inputemail.length()>0 &&
                 inputpartOne.length()>0 && inputpartTwo.length()>0 && inputpartThree.length()>0) {
                         if(inputPw.equals(inputPwc)) {
-                                if (idname.length()>0){ //중복된 아이디 걸러내고 회원가입 진행
-                                    //회원가입
+                            String dbData[] = selectProcess(inputId);
+                            if (!inputId.equals(dbData[0])){
 
                                     showToast(SignUpActivity.this, "회원가입에 성공했습니다.");
                                     result.setText("아이디:" + inputId + "\n" + "비밀번호:" + inputPw+ "\n"+ "이메일:" + inputemail+ "\n"+ "part1:" + inputpartOne+ "\n"+ "part2:" + inputpartTwo+ "\n"+ "part3:" + inputpartThree);
                                     clearFields();
-                                   //myStartActivity(SignInActivity.class);
-                                    //finish();
+                                    myStartActivity(HomeActivity.class);
+                                    finish();
                                 } else {
                                     result.setText("이미 존재하는 아이디 입니다.");
                                     clearFields();
@@ -103,10 +103,6 @@ public class SignUpActivity extends Activity{
         ContentValues values = new ContentValues();
         values.put("id","abcd");
         values.put("pass","1234");
-        values.put("email","abcd@gmail.com");
-        values.put("partOne","지리");
-        values.put("partTwo","운동");
-        values.put("partThree","교양");
         db.insert(USER_TABLE_NAME,"",values);
     }
 
