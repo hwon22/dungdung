@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="365dp"
     android:layout_height="755dp"
-    android:background="#C4dffc"
+    android:background="#Feebb1"
     >
 
     <TextView
@@ -17,7 +17,8 @@
         app:layout_constraintBottom_toTopOf="@+id/yes"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/yes"
@@ -25,25 +26,43 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="42dp"
         android:layout_marginEnd="22dp"
-        android:layout_marginBottom="267dp"
+        android:layout_marginBottom="150dp"
+        android:background="#Feebb1"
         android:text="그렇다"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/no"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/q"
-        android:background="#C4dffc"/>
+        app:layout_constraintTop_toBottomOf="@+id/q" />
 
     <Button
         android:id="@+id/no"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="186dp"
         android:layout_marginEnd="42dp"
-        android:layout_marginBottom="267dp"
+        android:layout_marginBottom="150dp"
+        android:background="#Feebb1"
         android:text="아니다"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/yes"
         app:layout_constraintTop_toBottomOf="@+id/q"
-        android:background="#C4dffc"/>
+        app:layout_constraintVertical_bias="0.923" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/yes"
+        app:layout_constraintEnd_toEndOf="@+id/yes"
+        app:layout_constraintStart_toStartOf="@+id/yes"
+        app:srcCompat="@drawable/fish" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/no"
+        app:layout_constraintEnd_toEndOf="@+id/no"
+        app:layout_constraintStart_toStartOf="@+id/no"
+        app:srcCompat="@drawable/clap" />
 </androidx.constraintlayout.widget.ConstraintLayout>

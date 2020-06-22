@@ -14,12 +14,13 @@
         android:layout_marginStart="42dp"
         android:layout_marginTop="452dp"
         android:layout_marginEnd="22dp"
-        android:layout_marginBottom="255dp"
+        android:layout_marginBottom="150dp"
         android:text="독서 방법 추천"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toStartOf="@+id/bt2"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/bt2"
@@ -28,10 +29,29 @@
         android:layout_marginStart="22dp"
         android:layout_marginTop="452dp"
         android:layout_marginEnd="42dp"
-        android:layout_marginBottom="255dp"
+        android:layout_marginBottom="150dp"
         android:text="독서 분야 추천"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/bt1"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="112dp"
+        android:layout_height="101dp"
+        app:layout_constraintBottom_toTopOf="@+id/bt1"
+        app:layout_constraintEnd_toEndOf="@+id/bt1"
+        app:layout_constraintStart_toStartOf="@+id/bt1"
+        app:srcCompat="@drawable/tube" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="94dp"
+        android:layout_height="106dp"
+        app:layout_constraintBottom_toTopOf="@+id/bt2"
+        app:layout_constraintEnd_toEndOf="@+id/bt2"
+        app:layout_constraintStart_toStartOf="@+id/bt2"
+        app:srcCompat="@drawable/seahorse" />
 </androidx.constraintlayout.widget.ConstraintLayout>
