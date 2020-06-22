@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.app.Activity;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ public class Q1Activity extends Activity {
     private Button No;
     private int cnt=0;
     private int[] quiz_r=new int[2];
+    private LinearLayout mLayout;
     ArrayList<String> quiz = new ArrayList<String>();
 
     protected void onCreate(Bundle savedInstanceState) {

@@ -14,7 +14,7 @@
         android:layout_marginTop="20dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/abc_vector_test" />
+        android:src="@drawable/abc_vector_test" />
 
     <Button
         android:id="@+id/button3"
@@ -36,7 +36,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/pen" />
+        android:src="@drawable/pen" />
 
     <ImageButton
         android:id="@+id/imageButton3"
@@ -48,7 +48,7 @@
         android:scaleType="centerCrop"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/micbutton" />
+        android:src="@drawable/micbutton" />
 
     <TextView
         android:id="@+id/textView2"
