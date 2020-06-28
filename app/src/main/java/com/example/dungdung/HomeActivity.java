@@ -14,17 +14,22 @@ public class HomeActivity extends Activity {
     private Button btnQuiz;
     private ImageButton btnRecord;
     private Button btnProfile;
+    private Button btnHome;
+    private Button btnAdd;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        btnAdd=(Button)findViewById(R.id.btnAdd);
+        btnAdd.setOnClickListener(onClickListener);
+        btnHome = (Button)findViewById(R.id.btnHome);
+        btnHome.setOnClickListener(onClickListener);
         btnRead = (Button) findViewById(R.id.btnRead);
         btnRead.setOnClickListener(onClickListener);
         btnQuiz = (Button) findViewById(R.id.btnQuiz);
         btnQuiz.setOnClickListener(onClickListener);
-        btnRecord = (ImageButton) findViewById(R.id.btnRecord);
-        btnRecord.setOnClickListener(onClickListener);
         btnProfile= (Button) findViewById(R.id.btnProfile);
         btnProfile.setOnClickListener(onClickListener);
     }
@@ -32,21 +37,24 @@ public class HomeActivity extends Activity {
         @Override
         public void onClick(View v) {
             switch (v.getId()) {
+                case R.id.btnAdd:
+                    showToast(HomeActivity.this, "추가 화면으로 이동합니다.");
+                    myStartActivity(AddActivity.class);
+                    break;
+                case R.id.btnHome:
+                        showToast(HomeActivity.this, "현재 화면입니다.");
+                    break;
                 case R.id.btnRead:
-                        showToast(HomeActivity.this, "타이머 화면으로 이동합니다.");
+                        showToast(HomeActivity.this, "읽기 화면으로 이동합니다.");
                         myStartActivity(TimerActivity.class);
-                        finish();
                     break;
                 case R.id.btnProfile:
-                        showToast(HomeActivity.this, "구현x.");
+                        showToast(HomeActivity.this, "프로필 화면으로 이동합니다.");
+                        myStartActivity(ProfileActivity.class);
                     break;
                 case R.id.btnQuiz:
                         showToast(HomeActivity.this, "퀴즈 화면으로 이동합니다.");
                         myStartActivity(QuizMainActivity.class);
-                        finish();
-                    break;
-                case R.id.btnRecord:
-                        showToast(HomeActivity.this, "구현중");
                     break;
                 default:
                     break;
