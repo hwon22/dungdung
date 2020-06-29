@@ -7,10 +7,11 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class HomeActivity extends Activity {
-    private Button btnRead;
+
     private Button btnQuiz;
     private ImageButton btnRecord;
     private Button btnProfile;
@@ -22,12 +23,17 @@ public class HomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
+        TextView id = findViewById(R.id.id);
+
+        Intent secondIntent = getIntent();
+        String idText = secondIntent.getStringExtra("아이디");
+
+        id.setText(idText);
+
         btnAdd=(Button)findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(onClickListener);
         btnHome = (Button)findViewById(R.id.btnHome);
         btnHome.setOnClickListener(onClickListener);
-        btnRead = (Button) findViewById(R.id.btnRead);
-        btnRead.setOnClickListener(onClickListener);
         btnQuiz = (Button) findViewById(R.id.btnQuiz);
         btnQuiz.setOnClickListener(onClickListener);
         btnProfile= (Button) findViewById(R.id.btnProfile);
@@ -43,10 +49,6 @@ public class HomeActivity extends Activity {
                     break;
                 case R.id.btnHome:
                         showToast(HomeActivity.this, "현재 화면입니다.");
-                    break;
-                case R.id.btnRead:
-                        showToast(HomeActivity.this, "읽기 화면으로 이동합니다.");
-                        myStartActivity(TimerActivity.class);
                     break;
                 case R.id.btnProfile:
                         showToast(HomeActivity.this, "프로필 화면으로 이동합니다.");

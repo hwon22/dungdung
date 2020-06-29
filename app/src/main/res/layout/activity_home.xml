@@ -11,7 +11,6 @@
         android:id="@+id/btnQuiz"
         android:layout_width="40dp"
         android:layout_height="35dp"
-        android:layout_marginStart="50dp"
         android:layout_marginTop="2dp"
         android:layout_marginEnd="30dp"
         android:layout_marginBottom="10dp"
@@ -20,7 +19,6 @@
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnProfile"
         app:layout_constraintTop_toBottomOf="@+id/view2"
         app:layout_constraintVertical_bias="0.32999998" />
 
@@ -28,29 +26,15 @@
         android:id="@+id/btnProfile"
         android:layout_width="40dp"
         android:layout_height="35dp"
-        android:layout_marginStart="50dp"
         android:layout_marginTop="2dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/profileimg2"
         android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/btnRead"
-        app:layout_constraintTop_toBottomOf="@+id/view2"
-        app:layout_constraintVertical_bias="0.32999998" />
-
-    <Button
-        android:id="@+id/btnRead"
-        android:layout_width="40dp"
-        android:layout_height="35dp"
-        android:layout_marginStart="50dp"
-        android:layout_marginTop="2dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/bookimg"
-        android:textSize="18sp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btnQuiz"
         app:layout_constraintStart_toEndOf="@+id/btnHome"
         app:layout_constraintTop_toBottomOf="@+id/view2"
-        app:layout_constraintVertical_bias="0.333" />
+        app:layout_constraintVertical_bias="0.32999998" />
 
     <Button
         android:id="@+id/btnAdd"
@@ -67,11 +51,11 @@
         android:layout_width="wrap_content"
         android:layout_height="2dp"
         android:layout_centerInParent="true"
-        android:layout_marginTop="565dp"
+        android:layout_marginBottom="70dp"
         android:background="#3A3A3A"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <View
         android:id="@+id/view"
@@ -86,7 +70,7 @@
         app:layout_constraintTop_toBottomOf="@+id/imageButton5" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/id"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
@@ -102,7 +86,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:layout_marginBottom="5dp"
-        android:text="TextView"
+        android:text="Lv.1"
         app:layout_constraintBottom_toBottomOf="@+id/imageButton5"
         app:layout_constraintStart_toEndOf="@+id/imageButton5" />
 
@@ -147,16 +131,6 @@
 
     </ScrollView>
 
-
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="4dp"
-        android:text="책읽기"
-        app:layout_constraintEnd_toEndOf="@+id/btnRead"
-        app:layout_constraintStart_toStartOf="@+id/btnRead"
-        app:layout_constraintTop_toBottomOf="@+id/btnRead" />
 
     <TextView
         android:id="@+id/textView16"

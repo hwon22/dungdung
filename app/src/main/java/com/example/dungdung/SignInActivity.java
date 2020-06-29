@@ -26,10 +26,12 @@ public class SignInActivity extends Activity {
         inputId = (EditText) findViewById(R.id.id);
         inputPass = (EditText) findViewById(R.id.pass);
 
+
         SignUpButton = (Button) findViewById(R.id.button);
         SignUpButton.setOnClickListener(onClickListener);
         SignInButton = (Button) findViewById(R.id.button2);
         SignInButton.setOnClickListener(onClickListener);
+
     }
 
     View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -61,7 +63,7 @@ public class SignInActivity extends Activity {
         String pwvalues = inputPass.getText().toString();
         if (idvalues.length() > 0 && pwvalues.length() > 0) {
             showToast(SignInActivity.this, "로그인되었습니다.");
-            myStartActivity(HomeActivity.class);
+            myStartActivity(HomeActivity.class,idvalues);
             finish();
         } else {
             showToast(SignInActivity.this, "빈칸을 모두 입력해주세요.");
@@ -70,9 +72,14 @@ public class SignInActivity extends Activity {
 
 
     }
-
     private void myStartActivity(Class c) {
         Intent intent = new Intent(this, c);
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(intent);
+    }
+    private void myStartActivity(Class c, String a) {
+        Intent intent = new Intent(this, c);
+        intent.putExtra("아이디",a);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }

@@ -1,10 +1,12 @@
 package com.example.dungdung;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.SystemClock;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Chronometer;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class TimerActivity extends Activity {
@@ -16,6 +18,14 @@ public class TimerActivity extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_timer1);
+
+        TextView bookName = findViewById(R.id.bookName);
+
+        Intent secondIntent = getIntent();
+        String bookNameText = secondIntent.getStringExtra("책 제목");
+
+        bookName.setText(bookNameText);
+
         chronometer = findViewById(R.id.chronometer);
         chronometer.setFormat("%s");
         chronometer.setBase(SystemClock.elapsedRealtime());
@@ -37,9 +47,10 @@ public class TimerActivity extends Activity {
         }
     }
     public void resetChronometer(View v) {
-        Toast.makeText(TimerActivity.this, "타이머 종료!", Toast.LENGTH_SHORT).show();
+        Toast.makeText(TimerActivity.this, "읽기를 종료합니다.", Toast.LENGTH_SHORT).show();
         time=SystemClock.elapsedRealtime() - chronometer.getBase();
         chronometer.setBase(SystemClock.elapsedRealtime());
         pauseOffset = 0;
+        finish();
     }
 }

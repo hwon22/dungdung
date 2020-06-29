@@ -9,7 +9,7 @@
     tools:context="com.example.dungdung.TimerActivity">
 
     <TextView
-        android:id="@+id/textView6"
+        android:id="@+id/bookName"
         android:layout_width="163dp"
         android:layout_height="50dp"
         android:gravity="center_horizontal"
