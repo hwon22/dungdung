@@ -26,24 +26,18 @@ public class RecordActivity extends Activity
     }
 
     private void setup(){
-
         memoStart=(Button)findViewById(R.id.memoStart);
         memoBtn=(ImageButton)findViewById(R.id.memoBtn);
-
         recordStart=(Button)findViewById(R.id.recordStart);
         recordStop=(Button)findViewById(R.id.recordStop);
         recordBtn=(ImageButton)findViewById(R.id.recordBtn);
-
         backBtn=(ImageButton)findViewById(R.id.backBtn);
-
         memoBtn.setOnClickListener(onClickListener);
         memoStart.setOnClickListener(onClickListener);
         recordBtn.setOnClickListener(onClickListener);
         recordStart.setOnClickListener(onClickListener);
         recordStop.setOnClickListener(onClickListener);
         backBtn.setOnClickListener(onClickListener);
-
-
     }
 
     View.OnClickListener onClickListener = new View.OnClickListener() {
