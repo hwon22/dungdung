@@ -2,6 +2,7 @@ package com.example.dungdung;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -10,18 +11,23 @@ import android.widget.Toast;
 
 public class RecordActivity extends Activity
 {
-  Button memoStart;
-  Button recordStart;
-  Button recordStop;
-  Button recordPlay;
-  Button recordPlay2;
-  Button recordPlayStop;
-  Button recordPlayStop2;
+    public static String url = "http://sites.google.com/site/ubiaccessmoblie/sample_audio.amr";
 
-  ImageButton memoBtn;
-  ImageButton recordBtn;
-  ImageButton backBtn;
-  private boolean clickIt;
+    MediaPlayer player;
+    int position=0;
+
+    Button memoStart;
+    Button recordStart;
+    Button recordStop;
+    Button recordPlay;
+    Button recordPlay2;
+    Button recordPlayStop;
+    Button recordPlayStop2;
+
+      ImageButton memoBtn;
+      ImageButton recordBtn;
+      ImageButton backBtn;
+      private boolean clickIt;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -90,19 +96,19 @@ public class RecordActivity extends Activity
                     break;
 
                 case R.id.recordPlayStop:
-                    showToast(RecordActivity.this, "재생을 중지합니다.");
+                    stopAudio();
                     break;
 
                 case R.id.recordPlay:
-                    showToast(RecordActivity.this,"재생을 시작합니다.");
+                    playAudio();
                     break;
 
                 case R.id.recordPlay2:
-                    showToast(RecordActivity.this,"재시작합니다.");
+                    resumeAudio();
                     break;
 
                 case R.id.recordPlayStop2:
-                    showToast(RecordActivity.this,"일시정지 합니다.");
+                    pauseAudio();
                     break;
 
                 case R.id.backBtn:
@@ -110,7 +116,8 @@ public class RecordActivity extends Activity
                         myStartActivity(AddActivity.class);
                     }
                     else{
-                        myStartActivity(RecordActivity.class); overridePendingTransition(0, 0); //화면 전환 애니메이션 제거 문장임!! (깔끔함)
+                        myStartActivity(RecordActivity.class);
+                        overridePendingTransition(0, 0); //화면 전환 애니메이션 제거 문장임!! (깔끔함)
                     }
                     break;
                 default:
@@ -118,6 +125,50 @@ public class RecordActivity extends Activity
             }
         }
     };
+
+    public void playAudio(){
+        try {
+            closePlayer();
+
+            player = new MediaPlayer();
+            player.setDataSource(url);
+            player.prepare();
+            player.start();
+            showToast(RecordActivity.this,"재생을 시작합니다.");
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+    }
+
+    public void pauseAudio(){
+        if(player!=null){
+            position = player.getCurrentPosition();
+            player.pause();
+            showToast(RecordActivity.this,"일시정지 합니다.");
+        }
+    }
+
+    public void resumeAudio(){
+        if(player!=null && !player.isPlaying()){
+            player.seekTo(position);
+            player.start();
+            showToast(RecordActivity.this,"재시작합니다.");
+        }
+    }
+
+    public void stopAudio(){
+        if(player !=null && player.isPlaying()){
+            player.stop();
+            showToast(RecordActivity.this, "재생을 중지합니다.");
+        }
+    }
+
+    public void closePlayer(){
+        if(player!=null){
+            player.release();
+            player=null;
+        }
+    }
 
     private void myStartActivity(Class c) {
         Intent intent = new Intent(this, c);
