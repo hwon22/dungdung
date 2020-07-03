@@ -14,7 +14,9 @@ public class RecordActivity extends Activity
   Button recordStart;
   Button recordStop;
   Button recordPlay;
+  Button recordPlay2;
   Button recordPlayStop;
+  Button recordPlayStop2;
 
   ImageButton memoBtn;
   ImageButton recordBtn;
@@ -36,6 +38,8 @@ public class RecordActivity extends Activity
         recordBtn=(ImageButton)findViewById(R.id.recordBtn);
         recordPlay=(Button)findViewById(R.id.recordPlay);
         recordPlayStop=(Button)findViewById(R.id.recordPlayStop);
+        recordPlay2=(Button)findViewById(R.id.recordPlay2);
+        recordPlayStop2=(Button)findViewById(R.id.recordPlayStop2);
 
         backBtn=(ImageButton)findViewById(R.id.backBtn);
         memoBtn.setOnClickListener(onClickListener);
@@ -45,6 +49,8 @@ public class RecordActivity extends Activity
         recordStop.setOnClickListener(onClickListener);
         recordPlay.setOnClickListener(onClickListener);
         recordPlayStop.setOnClickListener(onClickListener);
+        recordPlay2.setOnClickListener(onClickListener);
+        recordPlayStop2.setOnClickListener(onClickListener);
         backBtn.setOnClickListener(onClickListener);
     }
 
@@ -69,7 +75,9 @@ public class RecordActivity extends Activity
                     recordStart.setVisibility(View.VISIBLE);
                     recordStop.setVisibility(View.VISIBLE);
                     recordPlay.setVisibility(View.VISIBLE);
+                    recordPlay2.setVisibility(View.VISIBLE);
                     recordPlayStop.setVisibility(View.VISIBLE);
+                    recordPlayStop2.setVisibility(View.VISIBLE);
                     clickIt=true;
                     break;
 
@@ -87,6 +95,14 @@ public class RecordActivity extends Activity
 
                 case R.id.recordPlay:
                     showToast(RecordActivity.this,"재생을 시작합니다.");
+                    break;
+
+                case R.id.recordPlay2:
+                    showToast(RecordActivity.this,"재시작합니다.");
+                    break;
+
+                case R.id.recordPlayStop2:
+                    showToast(RecordActivity.this,"일시정지 합니다.");
                     break;
 
                 case R.id.backBtn:

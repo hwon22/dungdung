@@ -92,8 +92,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:visibility="gone"
         android:text="재생"
+        app:layout_constraintEnd_toEndOf="@+id/recordBtn"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/recordBtn"
+        app:layout_constraintTop_toBottomOf="@+id/recordBtn" />
+
+    <Button
+        android:id="@+id/recordPlay2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="68dp"
+        android:text="재시작"
         app:layout_constraintEnd_toEndOf="@+id/recordBtn"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/recordBtn"
@@ -103,12 +113,21 @@
         android:id="@+id/recordPlayStop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:layout_marginEnd="2dp"
-        android:visibility="gone"
+        android:layout_marginTop="48dp"
         android:text="정지"
         app:layout_constraintEnd_toEndOf="@+id/recordBtn"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/recordBtn"
+        app:layout_constraintTop_toBottomOf="@+id/recordPlay" />
+
+    <Button
+        android:id="@+id/recordPlayStop2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="96dp"
+        android:text="일시정지"
+        app:layout_constraintEnd_toEndOf="@+id/recordBtn"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="@+id/recordBtn"
         app:layout_constraintTop_toBottomOf="@+id/recordPlay" />
 
