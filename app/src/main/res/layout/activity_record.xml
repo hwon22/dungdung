@@ -60,9 +60,10 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="25dp"
         android:visibility="gone"
+        android:layout_marginTop="148dp"
         android:text="녹음 중지"
         app:layout_constraintStart_toEndOf="@+id/recordBtn"
-        app:layout_constraintTop_toBottomOf="@+id/recordStart" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/recordStart"
@@ -85,6 +86,31 @@
         android:visibility="gone"
         app:layout_constraintEnd_toStartOf="@+id/memoBtn"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/recordPlay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:visibility="gone"
+        android:text="재생"
+        app:layout_constraintEnd_toEndOf="@+id/recordBtn"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="@+id/recordBtn"
+        app:layout_constraintTop_toBottomOf="@+id/recordBtn" />
+
+    <Button
+        android:id="@+id/recordPlayStop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginEnd="2dp"
+        android:visibility="gone"
+        android:text="정지"
+        app:layout_constraintEnd_toEndOf="@+id/recordBtn"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="@+id/recordBtn"
+        app:layout_constraintTop_toBottomOf="@+id/recordPlay" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

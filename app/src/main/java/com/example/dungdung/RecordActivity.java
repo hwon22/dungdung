@@ -13,6 +13,9 @@ public class RecordActivity extends Activity
   Button memoStart;
   Button recordStart;
   Button recordStop;
+  Button recordPlay;
+  Button recordPlayStop;
+
   ImageButton memoBtn;
   ImageButton recordBtn;
   ImageButton backBtn;
@@ -31,12 +34,17 @@ public class RecordActivity extends Activity
         recordStart=(Button)findViewById(R.id.recordStart);
         recordStop=(Button)findViewById(R.id.recordStop);
         recordBtn=(ImageButton)findViewById(R.id.recordBtn);
+        recordPlay=(Button)findViewById(R.id.recordPlay);
+        recordPlayStop=(Button)findViewById(R.id.recordPlayStop);
+
         backBtn=(ImageButton)findViewById(R.id.backBtn);
         memoBtn.setOnClickListener(onClickListener);
         memoStart.setOnClickListener(onClickListener);
         recordBtn.setOnClickListener(onClickListener);
         recordStart.setOnClickListener(onClickListener);
         recordStop.setOnClickListener(onClickListener);
+        recordPlay.setOnClickListener(onClickListener);
+        recordPlayStop.setOnClickListener(onClickListener);
         backBtn.setOnClickListener(onClickListener);
     }
 
@@ -60,8 +68,8 @@ public class RecordActivity extends Activity
                     memoBtn.setVisibility(View.INVISIBLE); //리코드 버튼 지우기
                     recordStart.setVisibility(View.VISIBLE);
                     recordStop.setVisibility(View.VISIBLE);
-                    recordStart.setOnClickListener(onClickListener);
-                    recordStop.setOnClickListener(onClickListener);
+                    recordPlay.setVisibility(View.VISIBLE);
+                    recordPlayStop.setVisibility(View.VISIBLE);
                     clickIt=true;
                     break;
 
@@ -71,6 +79,14 @@ public class RecordActivity extends Activity
 
                 case R.id.recordStop:
                     showToast(RecordActivity.this, "녹음을 중지합니다.");
+                    break;
+
+                case R.id.recordPlayStop:
+                    showToast(RecordActivity.this, "재생을 중지합니다.");
+                    break;
+
+                case R.id.recordPlay:
+                    showToast(RecordActivity.this,"재생을 시작합니다.");
                     break;
 
                 case R.id.backBtn:
