@@ -23,7 +23,7 @@ public class HomeActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
 
-        TextView id = findViewById(R.id.id);
+        TextView id = findViewById(R.id.idText);
 
         Intent secondIntent = getIntent();
         String idText = secondIntent.getStringExtra("아이디");

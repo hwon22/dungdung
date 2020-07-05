@@ -47,7 +47,7 @@ public class QuizMainActivity extends Activity {
 
     public void bt2() {
         showToast(QuizMainActivity.this, "당신에게 꼭 맞는 독서 분야를 찾아보세요!");
-        myStartActivity(SignInActivity.class);
+        myStartActivity(LoginActivity.class);
     }
 
     private void myStartActivity(Class c) {

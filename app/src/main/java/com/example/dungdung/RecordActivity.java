@@ -1,17 +1,25 @@
 package com.example.dungdung;
-
+// 소스로 retry하기
 import android.app.Activity;
 import android.content.Intent;
 import android.media.MediaPlayer;
+import android.media.MediaRecorder;
 import android.os.Bundle;
+import android.os.Environment;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
+import java.io.File;
+
 public class RecordActivity extends Activity
 {
     public static String url = "http://sites.google.com/site/ubiaccessmoblie/sample_audio.amr";
+
+    MediaRecorder recorder;
+    String filename;
 
     MediaPlayer player;
     int position=0;
@@ -33,6 +41,11 @@ public class RecordActivity extends Activity
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record);
+
+        File sdcard = Environment.getExternalStorageDirectory();
+        File file = new File(sdcard,"recorded.mp4");
+        filename = file.getAbsolutePath();
+        Log.d("RecordeActivity","저장할 파일명: "+filename);
         setup();
     }
 
@@ -88,11 +101,11 @@ public class RecordActivity extends Activity
                     break;
 
                 case R.id.recordStart:
-                    showToast(RecordActivity.this, "녹음을 시작합니다.");
+                    recordAudio();
                     break;
 
                 case R.id.recordStop:
-                    showToast(RecordActivity.this, "녹음을 중지합니다.");
+                    stopRecording();
                     break;
 
                 case R.id.recordPlayStop:
@@ -126,12 +139,42 @@ public class RecordActivity extends Activity
         }
     };
 
+    public void stopRecording(){
+        if(recorder !=null){
+            recorder.stop();
+            recorder.release();
+            recorder=null;
+
+            showToast(RecordActivity.this, "녹음을 중지합니다.");
+        }
+
+    }
+
+    public void recordAudio() {
+        recorder = new MediaRecorder();
+        recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        recorder.setOutputFormat(MediaRecorder.OutputFormat.MPEG_4);
+        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.DEFAULT);
+
+        recorder.setOutputFile(filename);
+        try {
+            recorder.prepare();
+            recorder.start();
+            showToast(RecordActivity.this, "녹음을 시작합니다.");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+
+
     public void playAudio(){
         try {
             closePlayer();
 
             player = new MediaPlayer();
-            player.setDataSource(url);
+            //player.setDataSource(url);
+            player.setDataSource(filename);
             player.prepare();
             player.start();
             showToast(RecordActivity.this,"재생을 시작합니다.");
