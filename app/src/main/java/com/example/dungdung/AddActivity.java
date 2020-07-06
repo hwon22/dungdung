@@ -4,27 +4,32 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.example.dungdung.R;
 
 public class AddActivity extends Activity {
 
+    private Spinner s;
     private EditText inputName;
-    private EditText inputSection;
+
     private ImageButton closeBtn;
     private Button recordSt;
     private Button readSt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
         inputName=(EditText)findViewById(R.id.nameInput);
-        inputSection=(EditText)findViewById(R.id.sectionInput);
+        s = (Spinner) findViewById(R.id.spinnerArea);
 
         closeBtn = (ImageButton)findViewById(R.id.closeBtn);
         closeBtn.setOnClickListener(onClickListener);
@@ -32,6 +37,22 @@ public class AddActivity extends Activity {
         recordSt.setOnClickListener(onClickListener);
         readSt =(Button)findViewById(R.id.readSt);
         readSt.setOnClickListener(onClickListener);
+
+
+
+        s.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            @Override
+            public void onItemSelected(AdapterView<?> parent, View view,
+                                       int position, long id) {
+                showToast(AddActivity.this,"position : " + position +
+                        parent.getItemAtPosition(position));
+            }
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {}
+        });
+
+
+
     }
 
     View.OnClickListener onClickListener = new View.OnClickListener() {
@@ -42,17 +63,17 @@ public class AddActivity extends Activity {
                     myStartActivity(HomeActivity.class);
                     break;
                 case R.id.recordSt:
-                    add();
+                    //add();
                     //myStartActivity(RecordActivity.class);
                     break;
                 case R.id.readSt:
-                    add2();
+                    //add2();
                     break;
             }
         }
     };
 
-    public void add() {
+  /*  public void add() {
         String namevalues = inputName.getText().toString();
         String sectionvalues = inputSection.getText().toString();
         if (namevalues.length() > 0 && sectionvalues.length() > 0) {
@@ -77,7 +98,7 @@ public class AddActivity extends Activity {
 
         }
     }
-
+*/
     private void myStartActivity(Class c) {
         Intent intent = new Intent(this, c);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);

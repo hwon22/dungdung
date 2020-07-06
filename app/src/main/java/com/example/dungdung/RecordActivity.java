@@ -16,7 +16,7 @@ import java.io.File;
 
 public class RecordActivity extends Activity
 {
-    public static String url = "http://sites.google.com/site/ubiaccessmoblie/sample_audio.amr";
+
 
     MediaRecorder recorder;
     String filename;
@@ -42,10 +42,7 @@ public class RecordActivity extends Activity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record);
 
-        File sdcard = Environment.getExternalStorageDirectory();
-        File file = new File(sdcard,"recorded.mp4");
-        filename = file.getAbsolutePath();
-        Log.d("RecordeActivity","저장할 파일명: "+filename);
+
         setup();
     }
 

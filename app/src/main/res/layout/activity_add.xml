@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="365dp"
     android:layout_height="755dp"
-    android:background="#DC9C9595">
+    android:background="#DCFDEFC3">
 
     <ImageButton
         android:id="@+id/closeBtn"
@@ -14,28 +14,38 @@
         android:layout_marginEnd="30dp"
         android:background="#00FFFFFF"
         android:scaleType="centerCrop"
+        android:src="@drawable/xximg"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:src="@drawable/xximg"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <View
         android:id="@+id/view3"
         android:layout_width="251dp"
         android:layout_height="391dp"
-        android:layout_marginTop="125dp"
+        android:layout_marginTop="124dp"
         android:background="#FFFFFF"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <Spinner
+        android:id="@+id/spinnerArea"
+        android:layout_width="210dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="40dp"
+        android:entries="@array/part"
+        app:layout_constraintStart_toStartOf="@+id/textView5"
+        app:layout_constraintTop_toBottomOf="@+id/textView5" />
+
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="80dp"
-        android:text="책 이름을 입력하세요"
+        android:layout_marginTop="76dp"
+        android:text="책 제목"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintStart_toStartOf="@+id/view3"
         app:layout_constraintTop_toTopOf="@+id/view3" />
 
@@ -43,32 +53,21 @@
         android:id="@+id/nameInput"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="12dp"
         android:ems="10"
         android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/textView4"
         app:layout_constraintStart_toStartOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
-
-    <EditText
-        android:id="@+id/sectionInput"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        app:layout_constraintEnd_toEndOf="@+id/view3"
-        app:layout_constraintStart_toStartOf="@+id/view3"
-        app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <TextView
         android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:text="책 분야를 입력하세요"
+        android:layout_marginTop="52dp"
+        android:text="책 분야"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="@+id/view3"
+        app:layout_constraintHorizontal_bias="0.117"
         app:layout_constraintStart_toStartOf="@+id/view3"
         app:layout_constraintTop_toBottomOf="@+id/nameInput" />
 

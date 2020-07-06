@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="part">
+        <item >시</item>
+        <item >국내소설</item>
+        <item >국외소설</item>
+        <item >수필</item>
+        <item >인문</item>
+        <item >건강/운동</item>
+        <item >취미</item>
+    </string-array>
+</resources>
