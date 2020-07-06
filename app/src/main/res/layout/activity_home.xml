@@ -148,11 +148,21 @@
 
     <ListView
         android:id="@+id/listview1"
-        android:layout_width="314dp"
-        android:layout_height="546dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="311dp"
+        android:layout_height="501dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/view" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="25dp"
+        android:text="책 목록"
+        app:layout_constraintBottom_toTopOf="@+id/listview1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

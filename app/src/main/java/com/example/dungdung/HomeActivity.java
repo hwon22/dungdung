@@ -45,13 +45,13 @@ public class HomeActivity extends Activity {
         listview.setAdapter(adapter);
         // 첫 번째 아이템 추가.
         adapter.addItem(
-                "소설", "Account Box Black 36dp") ;
+                "도전! 웹소설 쓰기", "읽기 전","소설") ;
         // 두 번째 아이템 추가.
         adapter.addItem(
-                    "국내", "Account Circle Black 36dp") ;
+                    "걸어서 세계 한 바퀴", "읽는 중 -2020.07.07-","수필") ;
         // 세 번째 아이템 추가.
         adapter.addItem(
-                    "국외", "Assignment Ind Black 36dp") ;
+                    "운동은 삶의 낙", "읽는 중 -2020.07.07-","운동") ;
 
         btnAdd=(Button)findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(onClickListener);
@@ -70,6 +70,7 @@ public class HomeActivity extends Activity {
 
                 String titleStr = item.getTitle() ;
                 String descStr = item.getDesc() ;
+                String partStr = item.getDesc() ;
 
                 // TODO : use item data.
             }

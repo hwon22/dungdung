@@ -6,6 +6,7 @@ public class ListViewItem {
 
     private String titleStr ;
     private String descStr ;
+    private String partStr ;
 
 
     public void setTitle(String title) {
@@ -14,6 +15,9 @@ public class ListViewItem {
     public void setDesc(String desc) {
         descStr = desc ;
     }
+    public void setPart(String part) {
+        partStr = part ;
+    }
 
 
     public String getTitle() {
@@ -21,5 +25,8 @@ public class ListViewItem {
     }
     public String getDesc() {
         return this.descStr ;
+    }
+    public String getPart() {
+        return this.partStr ;
     }
 }
