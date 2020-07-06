@@ -102,35 +102,6 @@
         app:layout_constraintTop_toTopOf="parent"
         android:src="@drawable/staboatone"/>
 
-    <TextView
-        android:id="@+id/textView14"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="25dp"
-        android:layout_marginTop="30dp"
-        android:text="지난 7일"
-        android:textSize="18sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/view" />
-
-    <ScrollView
-        android:id="@+id/scroll_view"
-        android:layout_width="324dp"
-        android:layout_height="485dp"
-        android:layout_below="@+id/textView14"
-        android:fillViewport="true"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView14">
-
-        <ListView
-            android:id="@+id/db_list_view"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"></ListView>
-
-    </ScrollView>
-
 
     <TextView
         android:id="@+id/textView16"
@@ -174,5 +145,14 @@
         app:layout_constraintEnd_toEndOf="@+id/btnHome"
         app:layout_constraintStart_toStartOf="@+id/btnHome"
         app:layout_constraintTop_toBottomOf="@+id/btnHome" />
+
+    <ListView
+        android:id="@+id/listview1"
+        android:layout_width="314dp"
+        android:layout_height="546dp"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/view" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

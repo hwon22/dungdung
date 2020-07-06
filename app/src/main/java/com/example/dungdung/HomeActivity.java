@@ -3,12 +3,17 @@ package com.example.dungdung;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import androidx.core.content.ContextCompat;
 
 public class HomeActivity extends Activity {
 
@@ -29,6 +34,24 @@ public class HomeActivity extends Activity {
         String idText = secondIntent.getStringExtra("아이디");
 
         id.setText(idText);
+        ListView listview ;
+        ListViewAdapter adapter;
+
+        // Adapter 생성
+        adapter = new ListViewAdapter() ;
+
+        // 리스트뷰 참조 및 Adapter달기
+        listview = (ListView) findViewById(R.id.listview1);
+        listview.setAdapter(adapter);
+        // 첫 번째 아이템 추가.
+        adapter.addItem(
+                "소설", "Account Box Black 36dp") ;
+        // 두 번째 아이템 추가.
+        adapter.addItem(
+                    "국내", "Account Circle Black 36dp") ;
+        // 세 번째 아이템 추가.
+        adapter.addItem(
+                    "국외", "Assignment Ind Black 36dp") ;
 
         btnAdd=(Button)findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(onClickListener);
@@ -38,7 +61,21 @@ public class HomeActivity extends Activity {
         btnQuiz.setOnClickListener(onClickListener);
         btnProfile= (Button) findViewById(R.id.btnProfile);
         btnProfile.setOnClickListener(onClickListener);
+
+        listview.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView parent, View v, int position, long id) {
+                // get item
+                ListViewItem item = (ListViewItem) parent.getItemAtPosition(position) ;
+
+                String titleStr = item.getTitle() ;
+                String descStr = item.getDesc() ;
+
+                // TODO : use item data.
+            }
+        }) ;
     }
+
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
