@@ -45,18 +45,18 @@ public class HomeActivity extends Activity {
             switch (v.getId()) {
                 case R.id.btnAdd:
                     showToast(HomeActivity.this, "추가 화면으로 이동합니다.");
-                    myStartActivity(AddActivity.class);
+                    myStartActivity(AddActivity.class); overridePendingTransition(0, 0);
                     break;
                 case R.id.btnHome:
                         showToast(HomeActivity.this, "현재 화면입니다.");
                     break;
                 case R.id.btnProfile:
                         showToast(HomeActivity.this, "프로필 화면으로 이동합니다.");
-                        myStartActivity(ProfileActivity.class);
+                        myStartActivity(ProfileActivity.class); overridePendingTransition(0, 0);
                     break;
                 case R.id.btnQuiz:
                         showToast(HomeActivity.this, "퀴즈 화면으로 이동합니다.");
-                        myStartActivity(QuizMainActivity.class);
+                        myStartActivity(QuizMainActivity.class); overridePendingTransition(0, 0);
                     break;
                 default:
                     break;

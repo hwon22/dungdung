@@ -59,7 +59,7 @@ public class LoginActivity extends AppCompatActivity {
                                        .create();
                                dialog.show();
                                myStartActivity(HomeActivity.class);
-                               finish();
+                               finish(); overridePendingTransition(0, 0);
                             }
                             else{//회원등록 실패한 경우
                                 AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);

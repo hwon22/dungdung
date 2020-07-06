@@ -133,7 +133,7 @@ public class RegisterActivity extends AppCompatActivity {
                                         .setPositiveButton("확인",null)
                                         .create();
                                 dialog.show();
-                                finish();
+                                finish(); overridePendingTransition(0, 0);
                             }
                             else{
                                 AlertDialog.Builder builder=new AlertDialog.Builder( RegisterActivity.this );

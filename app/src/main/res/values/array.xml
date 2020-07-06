@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string-array name="part">
+        <item >선택</item>
         <item >시</item>
         <item >국내소설</item>
         <item >국외소설</item>
