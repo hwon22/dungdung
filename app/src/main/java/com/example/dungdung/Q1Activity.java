@@ -19,7 +19,8 @@ public class Q1Activity extends Activity {
     private Button No;
     private int e, i, s,n,t,f,j,p=0;
     private int cnt=0;
-    private char[] quiz_r=new char[3];
+    private char[] quiz_r=new char[4];
+    String[] mbti=new String[]{"estp"};
     private LinearLayout mLayout;
     ArrayList<String> quiz = new ArrayList<String>();
 
@@ -142,6 +143,9 @@ public class Q1Activity extends Activity {
                 }
                 String str = String.valueOf(quiz_r);
                 showToast(Q1Activity.this, "당신에게 꼭 맞는 독서법 입니다!"+str);
+                if(str==mbti[0]){
+                    myStartActivity(QR1Activity.class);
+                }
             }
             cnt++;
         }
