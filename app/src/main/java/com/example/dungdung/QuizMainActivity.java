@@ -11,7 +11,6 @@ import android.widget.Toast;
 public class QuizMainActivity extends Activity {
 
     private Button QuizMain1;
-    private Button QuizMain2;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -19,8 +18,6 @@ public class QuizMainActivity extends Activity {
 
         QuizMain1 = (Button) findViewById(R.id.bt1);
         QuizMain1.setOnClickListener(onClickListener);
-        QuizMain2 = (Button) findViewById(R.id.bt2);
-        QuizMain2.setOnClickListener(onClickListener);
 
     }
     //test
@@ -32,9 +29,6 @@ public class QuizMainActivity extends Activity {
                 case R.id.bt1:
                     bt1();
                     break;
-                case R.id.bt2:
-                    bt2();
-                    break;
                 default:
                     break;
             }
@@ -44,11 +38,6 @@ public class QuizMainActivity extends Activity {
     public void bt1() {
         showToast(QuizMainActivity.this, "당신에게 꼭 맞는 독서법을 찾아보세요!");
         myStartActivity(Q1Activity.class);
-    }
-
-    public void bt2() {
-        showToast(QuizMainActivity.this, "당신에게 꼭 맞는 독서 분야를 찾아보세요!");
-        myStartActivity(LoginActivity.class);
     }
 
     private void myStartActivity(Class c) {

@@ -11,29 +11,12 @@
         android:id="@+id/bt1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="42dp"
-        android:layout_marginTop="452dp"
-        android:layout_marginEnd="22dp"
         android:layout_marginBottom="150dp"
-        android:text="독서 방법 추천"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/bt2"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <Button
-        android:id="@+id/bt2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="22dp"
-        android:layout_marginTop="452dp"
-        android:layout_marginEnd="42dp"
-        android:layout_marginBottom="150dp"
-        android:text="독서 분야 추천"
+        android:text="성격유형에 따른 독서방법 추천 받기"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/bt1"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="1.0" />
 
@@ -41,17 +24,16 @@
         android:id="@+id/imageView6"
         android:layout_width="112dp"
         android:layout_height="101dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="444dp"
+        android:layout_marginEnd="100dp"
+        android:layout_marginBottom="12dp"
         app:layout_constraintBottom_toTopOf="@+id/bt1"
         app:layout_constraintEnd_toEndOf="@+id/bt1"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="@+id/bt1"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="1.0"
         app:srcCompat="@drawable/tube" />
 
-    <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="94dp"
-        android:layout_height="106dp"
-        app:layout_constraintBottom_toTopOf="@+id/bt2"
-        app:layout_constraintEnd_toEndOf="@+id/bt2"
-        app:layout_constraintStart_toStartOf="@+id/bt2"
-        app:srcCompat="@drawable/seahorse" />
 </androidx.constraintlayout.widget.ConstraintLayout>
