@@ -143,7 +143,7 @@ public class Q1Activity extends Activity {
                 }
                 String str = String.valueOf(quiz_r);
                 showToast(Q1Activity.this, "당신에게 꼭 맞는 독서법 입니다!"+str);
-                if(str==mbti[0]){
+                if(str.equals(mbti[0])){
                     myStartActivity(QR1Activity.class);
                 }
             }
