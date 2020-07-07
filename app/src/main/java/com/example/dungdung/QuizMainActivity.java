@@ -23,6 +23,7 @@ public class QuizMainActivity extends Activity {
         QuizMain2.setOnClickListener(onClickListener);
 
     }
+    //test
 
     View.OnClickListener onClickListener = new View.OnClickListener() {
         @Override
