@@ -42,7 +42,7 @@ public class LoginActivity extends AppCompatActivity {
         loginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String userID = idText.getText().toString();
+                final String userID = idText.getText().toString();
                 String userPass = passwordText.getText().toString();
 
                 Response.Listener<String> responseListener=new Response.Listener<String>() {
@@ -58,7 +58,7 @@ public class LoginActivity extends AppCompatActivity {
                                        .setPositiveButton("확인",null)
                                        .create();
                                dialog.show();
-                               myStartActivity(HomeActivity.class);
+                               myStartActivity(HomeActivity.class,userID);
                                finish(); overridePendingTransition(0, 0);
                             }
                             else{//회원등록 실패한 경우
@@ -92,6 +92,13 @@ public class LoginActivity extends AppCompatActivity {
         Intent intent = new Intent(this, c);
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
+    }
+
+    private void myStartActivity(Class c,String a) {
+        Intent secondintent = new Intent(this, c);
+        secondintent.putExtra("아이디",a);
+        secondintent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(secondintent);
     }
 
 }
