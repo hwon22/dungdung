@@ -20,7 +20,11 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
 
+import org.json.JSONArray;
 import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class HomeActivity extends Activity {
 
@@ -31,6 +35,11 @@ public class HomeActivity extends Activity {
     private Button btnAdd;
     AlertDialog dialog;
     String idText;
+
+    private ListView listView;
+    private ListViewAdapter adapter;
+    private List<ListViewItem> bookList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -42,24 +51,51 @@ public class HomeActivity extends Activity {
         idText = secondIntent.getStringExtra("아이디");
         id.setText(idText) ;
 
-        ListView listview ;
-        ListViewAdapter adapter;
+        ListView listview = null;
+        bookList = new ArrayList<ListViewItem>();
+
 
         // Adapter 생성
-        adapter = new ListViewAdapter() ;
+        adapter = new ListViewAdapter(getApplicationContext(), bookList);
+
 
         // 리스트뷰 참조 및 Adapter달기
-        listview = (ListView) findViewById(R.id.listview1);
+
+
         listview.setAdapter(adapter);
-        // 첫 번째 아이템 추가.
-        adapter.addItem(
-                "도전! 웹소설 쓰기", "읽기 전","소설") ;
-        // 두 번째 아이템 추가.
-        adapter.addItem(
-                    "걸어서 세계 한 바퀴", "읽는 중 -2020.07.07-","수필") ;
-        // 세 번째 아이템 추가.
-        adapter.addItem(
-                    "운동은 삶의 낙", "읽는 중 -2020.07.07-","운동") ;
+
+        try{
+            //intent로 값을 가져옵니다 이때 JSONObject타입으로 가져옵니다
+            JSONObject jsonObject = new JSONObject(secondIntent.getStringExtra("userList"));
+
+
+            //List.php 웹페이지에서 response라는 변수명으로 JSON 배열을 만들었음..
+            JSONArray jsonArray = jsonObject.getJSONArray("response");
+            int count = 0;
+
+            String bookName,bookPart,bookDo;
+
+            //JSON 배열 길이만큼 반복문을 실행
+            while(count < jsonArray.length()){
+                //count는 배열의 인덱스를 의미
+                JSONObject object = jsonArray.getJSONObject(count);
+
+                bookName = object.getString("userID");//여기서 ID가 대문자임을 유의
+                bookPart = object.getString("userPassword");
+                bookDo = object.getString("userName");
+
+                //값들을 User클래스에 묶어줍니다
+                ListViewItem item = new ListViewItem(bookName, bookPart, bookDo);
+                bookList.add(item);//리스트뷰에 값을 추가해줍니다
+                count++;
+            }
+
+
+        }catch(Exception e){
+            e.printStackTrace();
+        }
+
+
 
         btnAdd=(Button)findViewById(R.id.btnAdd);
         btnAdd.setOnClickListener(onClickListener);
@@ -76,9 +112,9 @@ public class HomeActivity extends Activity {
                 // get item
                 ListViewItem item = (ListViewItem) parent.getItemAtPosition(position) ;
 
-                String titleStr = item.getTitle() ;
-                String descStr = item.getDesc() ;
-                String partStr = item.getDesc() ;
+                String nameStr = item.getName() ;
+                String partStr = item.getPart() ;
+                String doStr = item.getDo() ;
 
                 // TODO : use item data.
             }
