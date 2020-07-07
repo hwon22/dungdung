@@ -39,6 +39,9 @@ public class AddActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add);
 
+        Intent userIDIntent = getIntent();
+        final String userIDvalue =  userIDIntent.getStringExtra("아이디");
+
         inputName = (EditText) findViewById(R.id.nameInput);
         s = (Spinner) findViewById(R.id.spinnerArea);
 
@@ -74,6 +77,7 @@ public class AddActivity extends Activity {
             public void onClick(View v) {
                 //기록하기 버튼을 클릭 했을 경우 책 제목과 분야를 디비에 저장한다. 단, 있던 책은 안됨^^
                 //중복확인임
+                String userID = userIDvalue;
                 String bookName = inputName.getText().toString();
                 String bookPart = value;
                 String bookDo = "읽기 전";
@@ -126,7 +130,7 @@ public class AddActivity extends Activity {
                     }
                 };
 
-                ValidateAddRequest validateAddRequest = new ValidateAddRequest(bookName,bookPart,bookDo,responseListener);
+                ValidateAddRequest validateAddRequest = new ValidateAddRequest(userID, bookName,bookPart,bookDo,responseListener);
                 RequestQueue queue = Volley.newRequestQueue(AddActivity.this);
                 queue.add(validateAddRequest);
 
@@ -138,10 +142,11 @@ public class AddActivity extends Activity {
             public void onClick(View v) {
                 //기록하기 버튼을 클릭 했을 경우 책 제목과 분야를 디비에 저장한다. 단, 있던 책은 안됨^^
                 //중복확인임
+                String userID = userIDvalue;
                 String bookName = inputName.getText().toString();
                 String bookPart = value;
                 String bookDo = "읽기 전";
-
+                showToast(AddActivity.this ,userID);
                 if (validate) {
                     return;
                 }
@@ -190,7 +195,7 @@ public class AddActivity extends Activity {
                     }
                 };
 
-                ValidateAddRequest validateAddRequest = new ValidateAddRequest(bookName,bookPart,bookDo,responseListener);
+                ValidateAddRequest validateAddRequest = new ValidateAddRequest(userID,bookName,bookPart,bookDo,responseListener);
                 RequestQueue queue = Volley.newRequestQueue(AddActivity.this);
                 queue.add(validateAddRequest);
 

@@ -13,7 +13,14 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.core.content.ContextCompat;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONObject;
 
 public class HomeActivity extends Activity {
 
@@ -22,7 +29,8 @@ public class HomeActivity extends Activity {
     private Button btnProfile;
     private Button btnHome;
     private Button btnAdd;
-
+    AlertDialog dialog;
+    String idText;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +39,9 @@ public class HomeActivity extends Activity {
         TextView id = findViewById(R.id.idText);
 
         Intent secondIntent = getIntent();
-        String idText = secondIntent.getStringExtra("아이디");
+        idText = secondIntent.getStringExtra("아이디");
+        id.setText(idText) ;
 
-        id.setText(idText);
         ListView listview ;
         ListViewAdapter adapter;
 
@@ -82,8 +90,8 @@ public class HomeActivity extends Activity {
         public void onClick(View v) {
             switch (v.getId()) {
                 case R.id.btnAdd:
-                    showToast(HomeActivity.this, "추가 화면으로 이동합니다.");
-                    myStartActivity(AddActivity.class); overridePendingTransition(0, 0);
+                    showToast(HomeActivity.this, idText);
+                    myStartActivity(AddActivity.class,idText); overridePendingTransition(0, 0);
                     break;
                 case R.id.btnHome:
                         showToast(HomeActivity.this, "현재 화면입니다.");
@@ -107,10 +115,18 @@ public class HomeActivity extends Activity {
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         startActivity(intent);
     }
+    private void myStartActivity(Class c, String b) {
+        Intent userIDintent = new Intent(this, c);
+        userIDintent.putExtra("아이디",b);
+        userIDintent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+        startActivity(userIDintent);
+    }
 
 
     public static void showToast(Activity activity, String msg) {
         Toast.makeText(activity, msg, Toast.LENGTH_SHORT).show();
         Toast.makeText(activity, msg, Toast.LENGTH_LONG).show();
     }
+
+
 }
