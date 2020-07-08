@@ -10,71 +10,55 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class ListViewAdapter extends BaseAdapter {
-    // Adapter에 추가된 데이터를 저장하기 위한 ArrayList
-    private ArrayList<ListViewItem> listViewItemList = new ArrayList<ListViewItem>() ;
+    private Context context;
+    private List<ListViewItem> bookList;
 
-    // ListViewAdapter의 생성자
-    public ListViewAdapter() {
-
+    public ListViewAdapter(Context context, List<ListViewItem> bookList){
+        this.context = context;
+        this.bookList = bookList;
     }
 
-    // Adapter에 사용되는 데이터의 개수를 리턴. : 필수 구현
+    //출력할 총갯수를 설정하는 메소드
     @Override
     public int getCount() {
-        return listViewItemList.size() ;
+        return bookList.size();
     }
 
-    // position에 위치한 데이터를 화면에 출력하는데 사용될 View를 리턴. : 필수 구현
     @Override
-    public View getView(int position, View convertView, ViewGroup parent) {
-        final int pos = position;
-        final Context context = parent.getContext();
-
-        // "listview_item" Layout을 inflate하여 convertView 참조 획득.
-        if (convertView == null) {
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.listview_item, parent, false);
-        }
-
-        // 화면에 표시될 View(Layout이 inflate된)으로부터 위젯에 대한 참조 획득
-        TextView titleTextView = (TextView) convertView.findViewById(R.id.textView1) ;
-        TextView descTextView = (TextView) convertView.findViewById(R.id.textView2) ;
-        TextView partTextView = (TextView) convertView.findViewById(R.id.textView3) ;
-
-        // Data Set(listViewItemList)에서 position에 위치한 데이터 참조 획득
-        ListViewItem listViewItem = listViewItemList.get(position);
-
-        // 아이템 내 각 위젯에 데이터 반영
-
-        titleTextView.setText(listViewItem.getTitle());
-        descTextView.setText(listViewItem.getDesc());
-        partTextView.setText(listViewItem.getPart());
-
-        return convertView;
+    public Object getItem(int i) {
+        return bookList.get(i);
     }
 
-    // 지정한 위치(position)에 있는 데이터와 관계된 아이템(row)의 ID를 리턴. : 필수 구현
+    //아이템별 아이디를 반환하는 메소드
     @Override
-    public long getItemId(int position) {
-        return position ;
+    public long getItemId(int i) {
+        return i;
     }
 
-    // 지정한 위치(position)에 있는 데이터 리턴 : 필수 구현
+    //가장 중요한 부분
     @Override
-    public Object getItem(int position) {
-        return listViewItemList.get(position) ;
-    }
+    public View getView(int i, View view, ViewGroup viewGroup) {
+        View v = View.inflate(context, R.layout.listview_item, null);
 
-    // 아이템 데이터 추가를 위한 함수. 개발자가 원하는대로 작성 가능.
-    public void addItem( String title, String desc, String part) {
-        ListViewItem item = new ListViewItem();
+        //뷰에 다음 컴포넌트들을 연결시켜줌
+        TextView userID = (TextView)v.findViewById(R.id.userID);
+        TextView bookName = (TextView)v.findViewById(R.id.userPassword);
+        TextView userName = (TextView)v.findViewById(R.id.userName);
+        TextView userAge = (TextView)v.findViewById(R.id.userAge);
 
-        item.setTitle(title);
-        item.setDesc(desc);
-        item.setPart(part);
+        userID.setText(userList.get(i).getUserID());
+        userPassword.setText(userList.get(i).getUserPassword());
+        userName.setText(userList.get(i).getUserName());
+        userAge.setText(userList.get(i).getUserAge());
 
-        listViewItemList.add(item);
+        //이렇게하면 findViewWithTag를 쓸 수 있음 없어도 되는 문장임
+        v.setTag(userList.get(i).getUserID());
+
+        //만든뷰를 반환함
+        return v;
     }
 }
+

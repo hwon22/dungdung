@@ -1,7 +1,6 @@
 package com.example.dungdung;
 
-import android.graphics.drawable.Drawable;
-
+/*
 public class ListViewItem {
 
     private String titleStr ;
@@ -29,4 +28,39 @@ public class ListViewItem {
     public String getPart() {
         return this.partStr ;
     }
+}
+*/
+
+public class ListViewItem{
+
+    private String bookName;
+    private String bookPart;
+    private String bookDo;
+
+    public void setName(String name){
+        bookName=name;
+    }
+    public void setPart(String part){
+        bookPart=part;
+    }
+    public void setDo(String bdo){ //do 예약어라 안됨^^
+        bookDo=bdo;
+    }
+
+    public String getName(){
+        return this.bookName;
+    }
+    public String getPart(){
+        return this.bookPart;
+    }
+    public String getDo(){
+        return this.bookDo;
+    }
+    public ListViewItem( String bookName, String bookPart, String bookDo) {
+
+        this.bookName = bookName;
+        this.bookPart = bookPart;
+        this.bookDo = bookDo;
+    }
+
 }
