@@ -27,6 +27,24 @@
         <activity android:name=".Q1Activity" />
         <activity android:name=".enfj" />
         <activity android:name=".enfp" />
+        <activity android:name=".entj" />
+        <activity android:name=".entp" />
+        <activity android:name=".esfj" />
+        <activity android:name=".esfp" />
+        <activity android:name=".estj" />
+        <activity android:name=".estp" />
+        <activity android:name=".infj" />
+        <activity android:name=".infp" />
+        <activity android:name=".intj" />
+        <activity android:name=".intp" />
+        <activity android:name=".isfj" />
+        <activity android:name=".isfp" />
+        <activity android:name=".istj" />
+        <activity android:name=".istp" />
+
+
+
+
         <activity android:name=".RecordActivity"/>
         <activity android:name=".QuizMainActivity"/>
         <activity android:name=".TimerActivity"/>
