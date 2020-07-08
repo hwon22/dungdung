@@ -25,8 +25,8 @@
         <activity android:name=".RegisterActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".Q1Activity" />
-        <activity android:name=".QR1Activity" />
-        <activity android:name=".QR2Activity" />
+        <activity android:name=".enfj" />
+        <activity android:name=".enfp" />
         <activity android:name=".RecordActivity"/>
         <activity android:name=".QuizMainActivity"/>
         <activity android:name=".TimerActivity"/>

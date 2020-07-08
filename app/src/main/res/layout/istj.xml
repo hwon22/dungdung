@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="365dp"
+    android:layout_height="755dp"
+    android:background="@drawable/qbg">
+
+    <Button
+        android:id="@+id/bt1"
+        android:layout_width="269dp"
+        android:layout_height="79dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="60dp"
+        android:background="#c4dffc"
+        android:stateListAnimator="@null"
+        android:text="ISTJ형, 소금형 당신에게 딱 맞는 독서법은..."
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.042" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="322dp"
+        android:layout_height="65dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="32dp"
+        android:text="1) 정돈 된 환경에서 혼자 조용히 책을 읽어보세요! 또한 비평가 혹은 기자 등 책에 대한 다른 사람의 의견에도 귀를 기울여보세요!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="82dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toEndOf="@+id/textView23"
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        app:srcCompat="@drawable/seahorse" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="323dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="44dp"
+        android:text="2) 배경지식이나 관련 경험을 먼저 해본 후 해당 분야의 책을 읽어보세요!"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="291dp"
+        android:layout_marginBottom="12dp"
+        android:text="이렇게 읽어보세요!"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt1" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="247dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="18dp"
+        android:text="3) 저자와 토론하듯, 머릿속으로 계속 생각하며 읽어보세요!"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="313dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="30dp"
+        android:text="4) 먼저 전체적인 책의 구조를 파악하고 난 뒤 책을 읽으세요!"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+</androidx.constraintlayout.widget.ConstraintLayout>

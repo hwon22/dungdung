@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="365dp"
+    android:layout_height="755dp"
+    android:background="@drawable/qbg">
+
+    <Button
+        android:id="@+id/bt1"
+        android:layout_width="275dp"
+        android:layout_height="81dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginBottom="60dp"
+        android:background="#c4dffc"
+        android:stateListAnimator="@null"
+        android:text="ESFP형, 사교형 당신에게 딱 맞는 독서법은..."
+        android:textSize="25dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.036" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="324dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="32dp"
+        android:text="1) 말하거나 메모하며 읽어보세요! 메모와 음성녹음 기능은 둥둥서점 App에 있답니다:D "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView20" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="82dp"
+        android:layout_height="84dp"
+        android:layout_marginTop="6dp"
+        app:layout_constraintStart_toEndOf="@+id/textView23"
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        app:srcCompat="@drawable/seahorse" />
+
+    <TextView
+        android:id="@+id/textView21"
+        android:layout_width="323dp"
+        android:layout_height="38dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="44dp"
+        android:text="2) 배경지식이나 관련 경험을 먼저 해본 후 해당 분야의 책을 읽어보세요!"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+    <TextView
+        android:id="@+id/textView20"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="104dp"
+        android:layout_marginEnd="291dp"
+        android:layout_marginBottom="12dp"
+        android:text="이렇게 읽어보세요!"
+        app:layout_constraintBottom_toTopOf="@+id/textView8"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/bt1" />
+
+    <TextView
+        android:id="@+id/textView23"
+        android:layout_width="230dp"
+        android:layout_height="43dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="18dp"
+        android:text="3) 설명 위주의 딱딱한 책보다는 이야기 형식으로 된 책을 읽어보세요!!"
+        app:layout_constraintBottom_toTopOf="@+id/imageView6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView21"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView24"
+        android:layout_width="310dp"
+        android:layout_height="58dp"
+        android:layout_marginStart="22dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="30dp"
+        android:text="4) 분석적으로 깊이 있게 책을 읽어보세요! 밑줄을 그어도 좋고 낯선 단어들을 정리해도 좋습니다! 메모를 할 경우 둥둥 서점의 메모 기능을 이용해보세요 :D"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView23" />
+</androidx.constraintlayout.widget.ConstraintLayout>

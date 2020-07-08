@@ -1,7 +1,6 @@
 package com.example.dungdung;
 
 import android.content.Intent;
-import android.graphics.drawable.AnimatedImageDrawable;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -20,7 +19,6 @@ public class Q1Activity extends Activity {
     private int e, i, s,n,t,f,j,p=0;
     private int cnt=0;
     private char[] quiz_r=new char[4];
-    String[] mbti=new String[]{"estp"};
     private LinearLayout mLayout;
     ArrayList<String> quiz = new ArrayList<String>();
 
@@ -143,8 +141,43 @@ public class Q1Activity extends Activity {
                 }
                 String str = String.valueOf(quiz_r);
                 showToast(Q1Activity.this, str+"형인 당신에게 꼭 맞는 독서법 입니다!");
-                if(str.equals(mbti[0])){
-                    myStartActivity(QR1Activity.class);
+
+                switch (str){
+                    case "istj" :   myStartActivity(istj.class);
+                        break;
+                    case "istp" :   myStartActivity(istp.class);
+                        break;
+                    case "isfj" :   myStartActivity(isfj.class);
+                        break;
+                    case "isfp" :   myStartActivity(isfp.class);
+                        break;
+                    case "intj" :   myStartActivity(intj.class);
+                        break;
+                    case "intp" :   myStartActivity(intp.class);
+                        break;
+                    case "infj" :   myStartActivity(infj.class);
+                        break;
+                    case "infp" :   myStartActivity(infp.class);
+                        break;
+                    case "estj" :   myStartActivity(estj.class);
+                        break;
+                    case "estp" :   myStartActivity(estp.class);
+                        break;
+                    case "esfj" :   myStartActivity(esfj.class);
+                        break;
+                    case "esfp" :   myStartActivity(esfp.class);
+                        break;
+                    case "entj" :   myStartActivity(entj.class);
+                        break;
+                    case "entp" :   myStartActivity(entp.class);
+                        break;
+                    case "enfj" :   myStartActivity(enfj.class);
+                        break;
+                    case "enfp" :   myStartActivity(enfp.class);
+                        break;
+
+                    default: showToast(Q1Activity.this,"에러");
+                        break;
                 }
             }
             cnt++;
